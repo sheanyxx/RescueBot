@@ -24,30 +24,29 @@
   </head>
 
   <body id="page-top">
+    <!-- To embed facebook messanger -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '331002047466938',
+          xfbml      : true,
+          version    : 'v3.1'
+        });
+        FB.AppEvents.logPageView();
+      };
 
-    <!-- Navigation -->
-<!--     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-customerchat"
+      page_id="2134240656799697">
+    </div>
 
     <!-- Header -->
     <header class="masthead">
@@ -56,18 +55,21 @@
           <h1 class="mx-auto my-0 text-uppercase">Rescue-Bot</h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">Stay prepaired and find relief during a disaster.</h2>
           <div class="row">
-            <a href="#" class="col-sm btn btn-primary js-scroll-trigger">Get Started</a>
-            <a href="#" class="col-sm btn btn-primary js-scroll-trigger">Offline</a>
+            <a href="https://www.messenger.com/t/2134240656799697" class="col-sm btn btn-primary js-scroll-trigger">Talk to R-Bot</a>
+            <a href="offline.html" class="col-sm btn btn-primary js-scroll-trigger">Offline</a>
+          </div>
+          <div class="container">
+            <a href="#" class="btn js-scroll-trigger">Register as a Resource Host</a>
           </div>
         </div>
       </div>
     </header>
 
     <!-- Footer -->
-    <footer class="bg-black small text-center text-white-50">
+    <footer class="bg-black small text-center text-white-50">      
       <div class="container">
-        Copyright &copy; Your Website 2018
-      </div>
+        Copyright &copy; RESCUE-BOT 2018
+      </div>      
     </footer>
 
     <!-- Bootstrap core JavaScript -->
