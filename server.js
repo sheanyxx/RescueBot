@@ -6,6 +6,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || 'localhost';
 var fs = require('fs');
+var bodyParser = require('body-parser')
+const multer = require('multer');
 const upload = multer({
   dest: 'uploads/' // this saves your file into a directory called "uploads"
 }); 
@@ -26,11 +28,11 @@ const accountId = '6550627';
 
 
 //Recipient Information goes here
-const recipientName = 'Claudia';
-const recipientEmail = 'claudiamb@zoho.com';
+let recipientName = 'Claudia';
+let recipientEmail = 'claudiamb@zoho.com';
 
 //Point this to the document you wish to send's location on the local machine. Default location is __workingDir\fileName
-const fileName = 'hackmit.pdf'; //IE: test.pdf
+let fileName = 'hackmit.pdf'; //IE: test.pdf
 //-------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
 
@@ -38,6 +40,11 @@ app.use('/vendor', express.static(path.join(__dirname, '/vendor')))
 app.use('/js', express.static(path.join(__dirname, '/js')))
 app.use('/css', express.static(path.join(__dirname, '/css')))
 app.use('/img', express.static(path.join(__dirname, '/img')))
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.get('/', function(req, res) {
 	return res.sendFile(__dirname + '/index.html')
@@ -47,8 +54,15 @@ app.get('/admin', function(req, res) {
 	return res.sendFile(__dirname + '/admin.html')
 });
 
-app.post('post', upload.single('file'), function (req, res) {
+app.get('/req', function(req, res) {
+	return res.sendFile(__dirname + '/req.html')
+});
 
+app.post('/req', upload.single('file'), function (req, res, next) {
+
+  fileName = req.file.path
+  // console.log(req.file)
+  // console.log(req.files)
   apiClient.setBasePath('https://demo.docusign.net/restapi');
   apiClient.addDefaultHeader('Authorization', 'Bearer ' + OAuthToken);
 
@@ -127,10 +141,13 @@ app.post('post', upload.single('file'), function (req, res) {
     if (err)
       console.log(err);
 
-    res.send(envelopeSummary);
+  	res.sendFile(__dirname + '/req2.html')
+    // res.send(envelopeSummary);
 
   });
 });
+
+
 
 app.listen(port, host, function (err) {
   if (err)

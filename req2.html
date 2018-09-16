@@ -34,7 +34,7 @@
               <div class="mx-auto text-center">
                 <h1 id="demo" class="text-uppercase" style="color: white">Funding Agreement</h1>
 
-                <!-- <div class="row"><div class="alert alert-success"> Added Success fully </div></div> -->
+                <div class="row"><div class="alert alert-success"> Added Success fully </div></div>
                 <div class="col">
                   <div class="card py-4 h-100">
                     <div class="card-body text-center">
@@ -43,7 +43,7 @@
                       <hr class="my-4">
                         <div class="container">
                         <div class="small text-black-50">
-                          <form id="contact-form" action="/req" method="POST" enctype="multipart/form-data">
+                          <form id="contact-form" action="/post" enctype="multipart/form-data" method="POST">
                                 <div class="contact-input">
                                   <input required id="name" for="name" class="input form-control" name="name" type="text" value="" size="25" maxlength="30" placeholder="Receiver" />
                                   <br><br>
@@ -57,7 +57,7 @@
                                 </div>
                                 <br>
                                 <div class="custom-file">
-                                  <input name="file" required type="file" class="custom-file-input" accept=".pdf" id="customFile">
+                                  <input required type="file" name="file" class="custom-file-input" accept=".pdf" id="customFile">
                                   <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                                 <br>
