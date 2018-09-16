@@ -1,120 +1,35 @@
 {
-    "title": "Grayscale",
-    "name": "startbootstrap-grayscale",
-    "version": "5.0.2",
-    "description": "A grayscale one page HTML theme for Bootstrap.",
-    "keywords": [
-        "css",
-        "sass",
-        "html",
-        "responsive",
-        "theme",
-        "template"
-    ],
-    "homepage": "https://startbootstrap.com/template-overviews/grayscale",
-    "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-grayscale/issues",
-        "email": "feedback@startbootstrap.com"
-    },
-    "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-grayscale.git"
-    },
-    "dependencies": {
-        "@fortawesome/fontawesome-free": "5.3.1",
-        "bootstrap": "4.1.3",
-        "docusign-esign": "^4.0.2",
-        "express": "^4.16.3",
-        "jquery": "3.3.1",
-        "jquery.easing": "^1.4.1",
-        "path": "^0.12.7"
-    },
-    "devDependencies": {
-        "browser-sync": "2.24.7",
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "6.0.0",
-        "gulp-clean-css": "3.10.0",
-        "gulp-header": "2.0.5",
-        "gulp-rename": "1.4.0",
-        "gulp-sass": "4.0.1",
-        "gulp-uglify": "3.0.1"
-    },
-    "express": {
-        "version": "4.16.3",
-        "resolved": "http://registry.npmjs.org/express/-/express-4.16.3.tgz",
-        "integrity": "sha1-avilAjUNsyRuzEvs9rWjTSL37VM=",
-        "requires": {
-            "accepts": "1.3.5",
-            "array-flatten": "1.1.1",
-            "body-parser": "1.18.2",
-            "content-disposition": "0.5.2",
-            "content-type": "1.0.4",
-            "cookie": "0.3.1",
-            "cookie-signature": "1.0.6",
-            "debug": "2.6.9",
-            "depd": "1.1.2",
-            "encodeurl": "1.0.2",
-            "escape-html": "1.0.3",
-            "etag": "1.8.1",
-            "finalhandler": "1.1.1",
-            "fresh": "0.5.2",
-            "merge-descriptors": "1.0.1",
-            "methods": "1.1.2",
-            "on-finished": "2.3.0",
-            "parseurl": "1.3.2",
-            "path-to-regexp": "0.1.7",
-            "proxy-addr": "2.0.4",
-            "qs": "6.5.1",
-            "range-parser": "1.2.0",
-            "safe-buffer": "5.1.1",
-            "send": "0.16.2",
-            "serve-static": "1.13.2",
-            "setprototypeof": "1.1.0",
-            "statuses": "1.4.0",
-            "type-is": "1.6.16",
-            "utils-merge": "1.0.1",
-            "vary": "1.1.2"
-        },
-        "dependencies": {
-            "finalhandler": {
-                "version": "1.1.1",
-                "resolved": "https://registry.npmjs.org/finalhandler/-/finalhandler-1.1.1.tgz",
-                "integrity": "sha512-Y1GUDo39ez4aHAw7MysnUD5JzYX+WaIj8I57kO3aEPT1fFRL4sr7mjei97FgnwhAyyzRYmQZaTHb2+9uZ1dPtg==",
-                "requires": {
-                    "debug": "2.6.9",
-                    "encodeurl": "1.0.2",
-                    "escape-html": "1.0.3",
-                    "on-finished": "2.3.0",
-                    "parseurl": "1.3.2",
-                    "statuses": "1.4.0",
-                    "unpipe": "1.0.0"
-                }
-            },
-            "qs": {
-                "version": "6.5.1",
-                "resolved": "https://registry.npmjs.org/qs/-/qs-6.5.1.tgz",
-                "integrity": "sha512-eRzhrN1WSINYCDCbrz796z37LOe3m5tmW7RQf6oBntukAG1nmovJvhnwHHRMAfeoItc1m2Hk02WER2aQ/iqs+A=="
-            },
-            "statuses": {
-                "version": "1.4.0",
-                "resolved": "https://registry.npmjs.org/statuses/-/statuses-1.4.0.tgz",
-                "integrity": "sha512-zhSCtt8v2NDrRlPQpCNtw/heZLtfUDqxBM1udqikb/Hbk52LK4nQSwr10u77iopCW5LsyHpuXS0GnEc48mLeew=="
-            }
-        }
-    },
-    "docusign-esign": {
-        "version": "4.0.2",
-        "resolved": "https://registry.npmjs.org/docusign-esign/-/docusign-esign-4.0.2.tgz",
-        "integrity": "sha512-vCLByqAvCLl/stOnfULVHBzDs/BhdhEL//ge38nZhsDfwlnRRx/rBE7d8/T8P2ZfCn5IdMm6r5xVw+zDIz6BnQ==",
-        "requires": {
-            "jsonwebtoken": "8.2.0",
-            "passport-oauth2": "1.4.0",
-            "superagent": "3.8.2"
-        }
-    }
+  "name": "docusign-node-sample",
+  "version": "1.1.0",
+  "description": "DocuSign Node.js SDK Samples",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "debug": "node  --inspect-brk NodeSDKSamples.js"
+  },
+  "dependencies": {
+    "docusign-esign": "^4.0.0",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "fs-extra": "^6.0.1",
+    "moment": "^2.22.1",
+    "multer": "^1.3.1",
+    "passport": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=8.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/docusign/docusign-code-examples"
+  },
+  "keywords": [
+    "node",
+    "docusign",
+    "esign",
+    "REST",
+    "API",
+    "SDK"
+  ],
+  "license": "MIT"
 }
