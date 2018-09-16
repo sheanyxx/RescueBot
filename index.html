@@ -25,7 +25,7 @@
 
   <body id="page-top">
     <!-- To embed facebook messanger -->
-    <script>
+   <!--  <script>
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '331002047466938',
@@ -46,21 +46,43 @@
 
     <div class="fb-customerchat"
       page_id="2134240656799697">
-    </div>
+    </div> -->
+
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>  
 
     <!-- Header -->
     <header class="masthead">
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">Rescue-Bot</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">Stay prepaired and find relief during a disaster.</h2>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">Stay prepared and find relief during any disaster.</h2>
           <div class="row">
-            <a href="https://www.messenger.com/t/2134240656799697" class="col-sm btn btn-primary js-scroll-trigger">Talk to R-Bot</a>
-            <a href="offline.html" class="col-sm btn btn-primary js-scroll-trigger">Offline</a>
+            <a href="https://www.messenger.com/t/2134240656799697" id="online" class="col-sm btn btn-primary js-scroll-trigger d-none">Talk to R-Bot</a>
           </div>
-          <div class="container">
+          <div class="row">
+            <a href="offline.html" id="offline" class="col-sm btn btn-primary js-scroll-trigger d-none">Organizations & Resources</a>
+          </div>
+          <!-- <div class="container">
             <a href="#" class="btn js-scroll-trigger">Register as a Resource Host</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </header>
@@ -81,6 +103,16 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+
+    <script>
+    var hasWifi = (navigator.onLine);
+    if (hasWifi) {
+      $('#online').removeClass('d-none')      
+    } else {
+      $('#offline').removeClass('d-none');
+    }              
+
+    </script>
 
   </body>
 
