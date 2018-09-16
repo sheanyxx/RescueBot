@@ -34,7 +34,7 @@
        <div class="collapse navbar-collapse" id="navbarResponsive">
          <ul class="navbar-nav ml-auto">
            <li class="nav-item">
-             <a class="nav-link js-scroll-trigger" href="#login">Admin login</a>
+             <a class="nav-link js-scroll-trigger" href="Admin.html">Admin login</a>
            </li>
            <li class="nav-item">
              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -56,44 +56,17 @@
             <div class="row">
               <a href="offline.html" id="offline" class="col-sm btn btn-primary js-scroll-trigger d-none">Organizations & Resources</a>
             </div>
+          </div>
+          <div class="row">
+            <a href="offline.html" id="offline" class="col-sm btn btn-primary js-scroll-trigger d-none">Organizations & Resources</a>
+          </div>
+          <!-- <div class="container">
+            <a href="#" class="btn js-scroll-trigger">Register as a Resource Host</a>
+          </div> -->
         </div>
       </div>
     </header>
 
-    <section id="login" class="contact-section bg-black">
-      <div class="container">
-        <br>
-        <br>
-
-        <form action="/session" accept-charset="UTF-8" method="post">
-          <input name="utf8" class="" type="hidden">
-          <input type="hidden" name="authenticity_token" value="vbP5QBg+BEV4/1+hlNWYJCE0/CmIcTiLuNR1CedgVe2epA6+mQvRwoWTHrrq/Z/xyNVw3BbvlnS5DanWORMb7Q==">
-          <div style="color: white">
-              <h1>Sign in to Admin</h1>
-          </div>
-
-          <div class="row-sm-6 align-items-left" style="color: white">
-
-            <label>
-              Username
-            </label>
-            <input type="text" name="login" id="login_field" class="form-control input-block" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus">
-
-            <label for="password">
-              Password
-            </label>
-            <input type="password" name="password" id="password" class="form-control form-control input-block" tabindex="2">
-            <br>
-            <a class="btn btn-primary btn-block" href="admin.html">Sign in</a>
-            <!-- <input type="submit" name="commit" value="Sign in" tabindex="3" class="btn btn-primary btn-block" data-disable-with="Signing in…"> -->
-          </div>
-      </form>
-      <br>
-      <br>
-      <br>
-
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer class="bg-black small text-center text-white-50">
@@ -120,6 +93,17 @@
      }
 
      </script>
+
+    <script>
+    var hasWifi = (navigator.onLine);
+    if (hasWifi) {
+      $('#online').removeClass('d-none')
+    } else {
+      $('#offline').removeClass('d-none');
+    }
+
+    </script>
+
   </body>
 
 </html>

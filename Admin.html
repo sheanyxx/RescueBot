@@ -27,50 +27,82 @@
 
     <!-- Header -->
     <header class="masthead">
+
+          <section id="login" class="contact-section bg-black">
+            <div class="container">
+              <br>
+              <br>
+
+              <form action="/session" accept-charset="UTF-8" method="post">
+                <input name="utf8" class="" type="hidden">
+                <input type="hidden" name="authenticity_token" value="vbP5QBg+BEV4/1+hlNWYJCE0/CmIcTiLuNR1CedgVe2epA6+mQvRwoWTHrrq/Z/xyNVw3BbvlnS5DanWORMb7Q==">
+                <div style="color: white">
+                    <h1>Sign in to Admin</h1>
+                </div>
+
+                <div class="row-sm-6 align-items-left" style="color: white">
+
+                  <label>
+                    Username
+                  </label>
+                  <input type="text" name="login" id="login_field" class="form-control input-block" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus">
+
+                  <label for="password">
+                    Password
+                  </label>
+                  <input type="password" name="password" id="password" class="form-control form-control input-block" tabindex="2">
+                  <br>
+                  <a class="btn btn-primary btn-block" href="admin.html">Sign in</a>
+                  <!-- <input type="submit" name="commit" value="Sign in" tabindex="3" class="btn btn-primary btn-block" data-disable-with="Signing in…"> -->
+                </div>
+            </form>
+            <br>
+            <br>
+            <br>
+
+            </div>
+          </section>
+
+
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
           <h1 id="demo" class="text-uppercase" style="color: white">Send Alert Request</h1>
 
-          <div class="row">
-            <div class="col">
-              <button class="col-sm btn btn-primary" onclick="myFunction()">Send Alert</a>
-              <script>
-                function myFunction() {
-                    var txt;
-                    var msg = prompt("Please type in the alert request");
-                    if (msg == null || msg == "") {
-                        txt = "Alert not sent";
-                    } else {
-                        txt = "Alert sent, awaiting aproval.";
-                        GET https://account-d.docusign.com/oauth/auth?
-
-                         response_type=code
-
-                         &scope=signature
-
-                         &client_id={CLIENT_ID}
-
-                         &state=a39fh23hnf23
-
-                         &redirect_uri={REDIRECT_URI}
-
-
-
-                      POST https://account-d.docusign.com/oauth/eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQkAAAABAAUABwCA2rk-shvWSAgAgBrdTPUb1kgCAHjmbOmnM5lBul1RLZpmmxgVAAEAAAAYAAEAAAAFAAAADQAkAAAAZjBmMjdmMGUtODU3ZC00YTcxLWE0ZGEtMzJjZWNhZTNhOTc4EgABAAAACwAAAGludGVyYWN0aXZlMAAA31MgshvWSA.dtKJ8uWjq2IDSGn4Tt4JAZOD1z3pwReX41BxhoPl6R1xEd4UqUgAykQnt2vsxsNYGThgDFq74_xER0m7R4fFfplS_4vsJWWRvYjpDvPPdjxXoCN5v7FT2tQet8xJjXD2Oz71TdmBiUhljg6PG3M0gtrON2T6dO4ofwoePC5LeKi7l5_L3lHTokMBPy01zLOyGxM-kFDhK3B37tE8QomfY_a4ereg3MB7kXBhHSqdoIx6goMC0N8PU2V8vkrVQ_tavCtG-8C8gxOkHaBiXRETTjmoDFjndxUg6nKnwpQbfep5bauqI_vv_YJDQHaiJt-0PCOk3ATbYEcCjhMt19U5nw
-
-                      Content-Type: application/x-www-form-urlencoded
-
-                      Authorization: Basic BASE64_COMBINATION_OF_INTEGRATOR_AND_SECRET_KEYS
-
-
-                      grant_type=authorization_code&authorization_code=YOUR_AUTHORIZATION_CODE
-                    }
-                    document.getElementById("demo").innerHTML = txt;
-                }
-              </script>
+          <div class="col">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Alert Message Request</h4>
+                <hr class="my-4">
+                  <div class="container">
+                  <div class="small text-black-50">
+                    <form id="contact-form" method="POST">
+                          <div class="contact-input">
+                            <input id="name" for="name" class="input form-control" name="name" type="text" value="" size="25" maxlength="30" placeholder="Receiver" />
+                            <br><br>
+                          </div>
+                          <div class="contact-input">
+                            <input id="email" for="email" class="input form-control" name="email" type="text" value="" size="25" maxlength="35" placeholder="Email To" />
+                            <br>
+                            </br>
+                          </div>
+                          <div class="contact-input">
+                          </div>
+                          <br>
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" accept=".pdf" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                          </div>
+                          <br>
+                          <br>
+                          <button id="submit_button" type="submit" value="Send" class="btn btn-primary">Send</button>
+                    </form>
+                  </div>
+                </div>
+                </div>
+              </div>
             </div>
 
-          </div>
         </div>
       </div>
     </header>
